@@ -107,6 +107,7 @@ def save_articles_and_click_next_while_articles(agent, index_page)
 end
 
 agent = Mechanize.new
+agent.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
 initial_index_page = agent.get(BASE_URL + "/media?page=0")
 
